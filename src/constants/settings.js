@@ -3,10 +3,6 @@ const HEADERS = {
   "Content-Type": "application/json",
   Accept: "application/json, text-plain, /",
   "X-Requested-With": "XMLHttpRequest",
-
-  "Access-Control-Allow-Origin": "http://localhost:3000",
-  "Access-Control-Allow-Methods": "POST",
-  "Access-Control-Allow-Headers": "Content-Type",
 };
 
 export default {
