@@ -13,4 +13,5 @@ export const Button = styled.div`
   position: fixed;
   bottom: 50px;
   right: 80px;
+  cursor: pointer;
 `;

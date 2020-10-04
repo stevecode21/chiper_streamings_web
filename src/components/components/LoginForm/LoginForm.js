@@ -19,7 +19,7 @@ export const LoginForm = ({ disabled, onSubmit, titleButton }) => {
       email: email.value,
       password: password.value,
     };
-    console.log("ese es el usuario", user);
+    // console.log("ese es el usuario", user);
     if (name.value === "" || email.value === "" || password === "") {
       setError("No olvides rellenar todos los campos");
     } else {

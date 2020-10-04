@@ -6,14 +6,13 @@ import { Context } from "./AuthGlobal";
 export const Auth = ({ children }) => {
   const [stateUser, dispatch] = useReducer(authReducer, {
     isAuthenticated: true,
-    data: {},
+    user: {},
   });
-  // const [showChild, setShowChild] = useState(false);
 
   useEffect(() => {
-    if (localStorage.user) {
-      dispatch(setCurrentUser(localStorage.user));
-    }
+    // if (localStorage.user) {
+    //   dispatch(setCurrentUser(localStorage.user));
+    // }
     // setShowChild(true);
   }, []);
 

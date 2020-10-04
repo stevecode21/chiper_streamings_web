@@ -3,6 +3,7 @@ import settings from "../../constants/settings";
 const API = settings.API;
 const HEADERS = settings.HEADERS;
 export const loginUser = (user, dispatch, setError) => {
+  console.log("hello");
   fetch(API + "users", {
     method: "POST",
     body: JSON.stringify(user),
@@ -18,6 +19,7 @@ export const loginUser = (user, dispatch, setError) => {
         setError(null);
       } else {
         setError(response.error);
+        console.log("error");
         logoutUser(dispatch);
       }
     })
