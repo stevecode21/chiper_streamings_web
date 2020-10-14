@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { OTPublisher } from "opentok-react";
+// import { OTPublisher } from "opentok-react";
+import { Container, OTPublisher } from "./styles";
 
 export const Publisher = () => {
   const [error, setError] = useState(null);
@@ -9,8 +10,9 @@ export const Publisher = () => {
   const onError = (err) => {
     setError(`Failed to publish: ${err.message}`);
   };
+
   return (
-    <div>
+    <Container>
       {error ? <div>{error}</div> : null}
       <OTPublisher
         properties={{
@@ -19,6 +21,6 @@ export const Publisher = () => {
         }}
         onError={onError}
       />
-    </div>
+    </Container>
   );
 };

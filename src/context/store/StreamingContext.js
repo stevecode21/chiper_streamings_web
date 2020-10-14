@@ -6,6 +6,7 @@ export const ContextStreaming = createContext();
 export const StreamingContext = ({ children }) => {
   const [streamingState, dispatchStreaming] = useReducer(streamingReducer, {
     modalIsOpen: false,
+    streamingData: {},
   });
 
   return (

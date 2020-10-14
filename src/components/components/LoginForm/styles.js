@@ -46,4 +46,25 @@ export const Input = styled.input`
   :-ms-input-placeholder {
     color: #c4c4c4;
   }
+  :focus {
+    outline: none;
+    ::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    :-moz-placeholder {
+      /* Firefox 18- */
+      color: transparent;
+    }
+
+    ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: transparent;
+    }
+
+    :-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+  caret-color: #c4c4c4;
 `;

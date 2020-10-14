@@ -11,15 +11,16 @@ import { NavBar } from "./components/components/NavBar/NavBar";
  */
 import { Dashboard } from "./pages/Dashboard";
 import { Login } from "./pages/Login";
+import { NotFound } from "./pages/NotFound";
 export const App = () => {
   const { stateUser } = useContext(Context);
   return (
     <StreamingContext>
       <Suspense fallback={<div />}>
         <GlobalStyle />
-        {/* <VideoStreaming /> */}
         <NavBar />
         <Router>
+          <NotFound default />
           {!stateUser.isAuthenticated && <Login path="/login" />}
           {!stateUser.isAuthenticated && (
             <Redirect noThrow from="/" to="/login" />
@@ -28,6 +29,7 @@ export const App = () => {
             <Redirect noThrow from="/login" to="/" />
           )}
           <Dashboard path="/" />
+          <VideoStreaming path="/room/:sessionId" />
         </Router>
       </Suspense>
     </StreamingContext>

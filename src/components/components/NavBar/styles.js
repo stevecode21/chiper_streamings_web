@@ -15,15 +15,11 @@ export const Nav = styled.nav`
 `;
 
 export const Link = styled(LinkRouter)`
-  /* align-items: center;
-  color: #888;
-  display: inline-flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%; */
-  /* width: 220px; */
   text-decoration: none;
   color: #707070;
+  &[aria-current] {
+    color: #ff0136;
+  }
 `;
 
 export const Img = styled.img`

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext } from "react";
 import {
   Nav,
   Link,
@@ -10,9 +10,9 @@ import {
 import { Logo } from "../Logo/Logo";
 import { Context } from "../../../context/store/AuthGlobal";
 const LOGO = "../../../assets/img/test.jpg";
-
-export const NavBar = (props) => {
-  const { stateUser } = useContext(Context);
+import { logoutUser } from "../../../context/actions/user.actions";
+export const NavBar = () => {
+  const { stateUser, dispatch } = useContext(Context);
 
   if (!stateUser.isAuthenticated) {
     return (
@@ -22,8 +22,8 @@ export const NavBar = (props) => {
         </ContainerLogo>
         <ContainerNavPages>
           <UnorderedList>
-            <Link to="/">Crear cuenta</Link>
-            <Link to="/">Ayuda</Link>
+            <Link to="/login">Crear cuenta</Link>
+            <Link to="/acerca">Acerca</Link>
           </UnorderedList>
         </ContainerNavPages>
       </Nav>
@@ -37,8 +37,11 @@ export const NavBar = (props) => {
         <ContainerNavPages>
           <UnorderedList>
             <Link to="/">Mi espacio</Link>
-            <Link to="/">Archivados</Link>
-            <Link to="/">Ayuda</Link>
+            <Link to="/archived">Archivados</Link>
+            <Link to="/help">Ayuda</Link>
+            <Link to="/login" onClick={() => logoutUser(dispatch)}>
+              Cerrar sesión
+            </Link>
           </UnorderedList>
         </ContainerNavPages>
       </Nav>

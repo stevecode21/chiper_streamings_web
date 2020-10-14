@@ -22,8 +22,8 @@ const VideoStreaming = () => {
         // eventHandlers
         onError={onError}
       >
-        {error ? <div>{error}</div> : null}
-        <ConnectionStatus connected={connected} />
+        {/* {error ? <div>{error}</div> : null} */}
+        {/* <ConnectionStatus connected={connected} /> */}
         <Publisher />
       </OTSession>
     </div>
