@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "run-build": "npm run build",
+    "build": "webpack --mode development",
     "start:dev": "npx serve dist -s",
     "serve:dev": "webpack --mode 'development' && npx serve dist -s",
     "dev": "webpack-dev-server --history-api--fallback"
