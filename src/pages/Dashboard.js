@@ -25,9 +25,13 @@ export const Dashboard = () => {
   const handleCloseModal = () => {
     openOrCloseModal(!modalIsOpen, dispatchStreaming);
   };
-  const handleCreateRoom = async (name) => {
-    await createRoom();
-    await navigate(`/room/${sessionId}`);
+  const handleCreateRoom = async (name, dispatchStreaming) => {
+    try {
+      await createRoom(name, dispatchStreaming);
+      await navigate(`/room/${sessionId}`);
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <>

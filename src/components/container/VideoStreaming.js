@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { OTPublisher, OTSession, preloadScript } from "opentok-react";
 import { ConnectionStatus } from "../components/ConnectionStatus/ConnectionStatus";
 import { Publisher } from "../components/Publisher/Publisher";
+import { TimeElapsed } from "../components/TimeElapsed/TimeElapsed";
+import { ContextStreaming } from "../../context/store/StreamingContext";
+import { Container } from "./styles";
 const VideoStreaming = () => {
   const [error, setError] = useState(null);
   const [connected, setConnected] = useState(true);
-
+  const {
+    dispatchStreaming,
+    streamingState: {
+      streamingData: { sessionId, apiKey, token },
+    },
+  } = useContext(ContextStreaming);
   const onError = (err) => {
     setError(`Failed to connected: ${err.message}`);
   };
   return (
-    <div>
+    <Container>
       <OTSession
         apiKey={"46893344"}
         sessionId={
@@ -26,7 +34,8 @@ const VideoStreaming = () => {
         {/* <ConnectionStatus connected={connected} /> */}
         <Publisher />
       </OTSession>
-    </div>
+      <TimeElapsed />
+    </Container>
   );
 };
 

@@ -13,11 +13,15 @@ export const Publisher = () => {
 
   return (
     <Container>
-      {error ? <div>{error}</div> : null}
+      {/* {error ? <div>{error}</div> : null} */}
       <OTPublisher
         properties={{
           publishAudio: audio,
           publishVideo: video,
+          insertMode: "append",
+          width: "50%",
+          height: "100%",
+          showControls: false,
         }}
         onError={onError}
       />

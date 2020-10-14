@@ -12,6 +12,8 @@ export const Nav = styled.nav`
   align-items: center;
   background-color: #ffffff;
   height: 80px;
+  /* position: fixed;
+  z-index: 10; */
 `;
 
 export const Link = styled(LinkRouter)`

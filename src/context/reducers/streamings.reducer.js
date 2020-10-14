@@ -7,6 +7,11 @@ export default function (state, action) {
         ...state,
         modalIsOpen: action.payload,
       };
+    case TYPES.CREATE_SESSION_STREAMING:
+      return {
+        ...state,
+        streamingData: action.payload.data,
+      };
     default:
       return state;
   }

@@ -3,9 +3,14 @@ import settings from "../../constants/settings";
 const API = settings.API;
 const HEADERS = settings.HEADERS;
 
-export const createRoom = async (name) => {
+export const createRoom = async (name, dispatch) => {
   try {
-    const response = await fetch(API, +`opentok/room/${name}`, {});
+    const response = await fetch(API, +`opentok/room/${name}`, {
+      method: "GET",
+      headers: HEADERS,
+    });
+    let data = response.json();
+    dispatch({ type: TYPES.CREATE_SESSION_STREAMING, payload: data });
   } catch (error) {
     console.log(error);
   }
