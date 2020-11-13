@@ -5,7 +5,7 @@ import { Context } from "./AuthGlobal";
 
 export const Auth = ({ children }) => {
   const [stateUser, dispatch] = useReducer(authReducer, {
-    isAuthenticated: true,
+    isAuthenticated: false,
     user: {},
   });
 
