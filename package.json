@@ -1,6 +1,6 @@
 {
   "name": "chiper_streamings_web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "run-build": "npm run build",
